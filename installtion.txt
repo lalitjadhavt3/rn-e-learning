@@ -1,0 +1,6 @@
+required softwares
+
+openjdk 11
+vs code
+postman
+reactotron

@@ -73,11 +73,13 @@ class Login extends PureComponent {
     }
     dispatch(setLoading(true));
     const { username, password } = this.state;
+    //console.log(username, password);
     const params = {
       username,
       password,
     };
     const response = await Client.login(params);
+    console.log(response);
     dispatch(setLoading(false));
 
     if (response && response?.token) {

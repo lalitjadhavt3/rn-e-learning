@@ -2,10 +2,11 @@
 import { config } from './config';
 
 const Client = {
-  login: (params) => config.post(`/wp-json/learnpress/v1/token`, params),
+  login: (params) =>
+    config.post(`https://lalitjadhav.in/lms/login.php`, params),
 
   register: (params) =>
-    config.post('/wp-json/learnpress/v1/token/register', params),
+    config.post('https://lalitjadhav.in/lms/register.php', params),
 
   course: (params = {}, randomVersion = true) =>
     config.get('/wp-json/learnpress/v1/courses', { ...params }, randomVersion),
@@ -18,16 +19,28 @@ const Client = {
     config.get(`/wp-json/learnpress/v1/lessons`, { ...params }),
 
   finishCourse: (params) =>
-    config.post('/wp-json/learnpress/v1/courses/finish', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/courses/finish',
+      params
+    ),
 
   retakeCourse: (params) =>
-    config.post('/wp-json/learnpress/v1/courses/retake', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/courses/retake',
+      params
+    ),
 
   enroll: (params) =>
-    config.post('/wp-json/learnpress/v1/courses/enroll', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/courses/enroll',
+      params
+    ),
 
   completeLesson: (params) =>
-    config.post('/wp-json/learnpress/v1/lessons/finish', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/lessons/finish',
+      params
+    ),
 
   quiz: (id) => config.get(`/wp-json/learnpress/v1/quiz/${id}`),
 
@@ -58,7 +71,10 @@ const Client = {
     config.get('/wp-json/wp/v2/course_category', { ...params }),
 
   addRemoveWishlist: (params) =>
-    config.post('/wp-json/learnpress/v1/wishlist/toggle', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/wishlist/toggle',
+      params
+    ),
 
   getWishlist: (params) =>
     config.get('/wp-json/learnpress/v1/wishlist', { ...params }),
@@ -109,22 +125,40 @@ const Client = {
   getReview: (id) => config.get(`/wp-json/learnpress/v1/review/course/${id}`),
 
   createReview: (param) =>
-    config.post('/wp-json/learnpress/v1/review/submit', param),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/review/submit',
+      param
+    ),
 
   checkAnswer: (params) =>
-    config.post('/wp-json/learnpress/v1/quiz/check_answer', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/quiz/check_answer',
+      params
+    ),
 
   resetEmail: (params) =>
-    config.post('/wp-json/learnpress/v1/users/reset-password', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/users/reset-password',
+      params
+    ),
 
   changePassword: (params) =>
-    config.post('/wp-json/learnpress/v1/users/change-password', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/users/change-password',
+      params
+    ),
 
   verifyReceipt: (params) =>
-    config.post('/wp-json/learnpress/v1/courses/verify-receipt', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/courses/verify-receipt',
+      params
+    ),
 
   deleteAccount: (params) =>
-    config.post('/wp-json/learnpress/v1/users/delete', params),
+    config.post(
+      'https://test.thimpress.com/wp-json/learnpress/v1/users/delete',
+      params
+    ),
 };
 
 export default Client;

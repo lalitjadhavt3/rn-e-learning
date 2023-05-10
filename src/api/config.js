@@ -76,7 +76,7 @@ const onResponse = async (request, result) => {
 
 const config = {
   post: async (endpoint: string, params: Object) => {
-    const url = SITE_URL + endpoint;
+    const url = endpoint;
     console.debug(url);
     const options = {
       method: 'POST',
@@ -100,7 +100,10 @@ const config = {
     }
 
     // eslint-disable-next-line new-cap, prettier/prettier
-    const url = `${SITE_URL}${endpoint}${qs.stringify( { ...queryParam }, true )}`;
+    const url = `${SITE_URL}${endpoint}${qs.stringify(
+      { ...queryParam },
+      true
+    )}`;
 
     console.debug(url);
 

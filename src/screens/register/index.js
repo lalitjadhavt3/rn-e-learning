@@ -121,7 +121,7 @@ class Register extends PureComponent {
       confirm_password: confirmPassword,
     };
     const response = await Client.register(params);
-
+    console.log(response);
     dispatch(setLoading(false));
 
     if (response && response?.token) {
